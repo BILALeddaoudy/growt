@@ -1,64 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Panel</title>
 <link rel="stylesheet" href="admin.css">
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
-  <div class="admin-container">
-    <h1>Admin Panel</h1>
 
-    <!-- Login Section -->
-    <div id="login-section">
-      <input type="email" id="admin-email" placeholder="Email">
-      <input type="password" id="admin-password" placeholder="Password">
-      <button onclick="loginAdmin()">Login</button>
-    </div>
+<!-- Login Page -->
+<div id="loginPage" class="center-page">
+  <h2>Admin Login</h2>
+  <input type="email" id="loginEmail" placeholder="Email">
+  <input type="password" id="loginPassword" placeholder="Password">
+  <button id="loginBtn">Login</button>
+  <p id="loginError" class="error-msg"></p>
+</div>
 
-    <!-- Dashboard Section -->
-    <div id="dashboard" style="display:none;">
-      <h2>Add New Article</h2>
-      <input id="titleEn" placeholder="Title (EN)">
-      <input id="titleAr" placeholder="Title (AR)">
-      <textarea id="summaryEn" placeholder="Summary (EN)"></textarea>
-      <textarea id="summaryAr" placeholder="Summary (AR)"></textarea>
-      <textarea id="contentEn" placeholder="Content (EN)"></textarea>
-      <textarea id="contentAr" placeholder="Content (AR)"></textarea>
-      <input id="category" placeholder="Category">
-      <input id="image" placeholder="Image URL">
-      <input id="tags" placeholder="Tags (comma separated)">
-      <button onclick="addArticle()">Publish Article</button>
+<!-- Dashboard Page -->
+<div id="dashboardPage" class="hidden">
+  <header>
+    <h1>Articles Panel</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
 
-      <h2>Existing Articles</h2>
-      <div id="articles-list"></div>
-    </div>
+  <div class="controls">
+    <button id="addArticleBtn">Add New Article</button>
   </div>
 
-  <script type="module" src="admin.js"></script>
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  <!-- Article Cards -->
+  <div id="articlesContainer" class="cards-container">
+    <!-- JS will render cards here -->
+  </div>
+</div>
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyA4OTXTp_2tUZ05J0MfmHbANfbvxy4HHzY",
-    authDomain: "growt-4aaa0.firebaseapp.com",
-    projectId: "growt-4aaa0",
-    storageBucket: "growt-4aaa0.firebasestorage.app",
-    messagingSenderId: "901425665708",
-    appId: "1:901425665708:web:00d1c535c806078b77f109",
-    measurementId: "G-7PX5RE80YD"
-  };
+<!-- Article Form Modal -->
+<div id="articleFormModal" class="modal hidden">
+  <div class="modal-content">
+    <h2 id="formTitle">Add Article</h2>
+    <input type="text" id="titleEn" placeholder="Title (English)">
+    <input type="text" id="titleAr" placeholder="Title (Arabic)">
+    <textarea id="summaryEn" placeholder="Summary (English)"></textarea>
+    <textarea id="summaryAr" placeholder="Summary (Arabic)"></textarea>
+    <textarea id="contentEn" placeholder="Content (English)"></textarea>
+    <textarea id="contentAr" placeholder="Content (Arabic)"></textarea>
+    <input type="text" id="imageUrl" placeholder="Image URL">
+    <input type="text" id="author" placeholder="Author">
+    <input type="text" id="category" placeholder="Category">
+    <input type="text" id="tags" placeholder="Tags (comma-separated)">
+    <button id="saveArticleBtn">Save</button>
+    <button id="cancelArticleBtn">Cancel</button>
+    <p id="formMsg" class="error-msg"></p>
+  </div>
+</div>
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+<script src="js/admin.js" defer></script>
 </body>
 </html>
