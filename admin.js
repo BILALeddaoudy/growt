@@ -1,121 +1,115 @@
-// ------------------ Firebase imports ------------------
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
-import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc } 
-    from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
-import { getAuth, signInWithEmailAndPassword } 
-    from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
-
-// ------------------ Firebase config ------------------
+// Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyA4OTXTp_2tUZ05J0MfmHbANfbvxy4HHzY",
-  authDomain: "growt-4aaa0.firebaseapp.com",
-  projectId: "growt-4aaa0",
-  storageBucket: "growt-4aaa0.firebasestorage.app",
-  messagingSenderId: "901425665708",
-  appId: "1:901425665708:web:00d1c535c806078b77f109"
+    apiKey: "AIzaSyA4OTXTp_2tUZ05J0MfmHbANfbvxy4HHzY",
+    authDomain: "growt-4aaa0.firebaseapp.com",
+    projectId: "growt-4aaa0",
+    storageBucket: "growt-4aaa0.firebasestorage.app",
+    messagingSenderId: "901425665708",
+    appId: "1:901425665708:web:00d1c535c806078b77f109",
+    measurementId: "G-7PX5RE80YD"
 };
 
-// ------------------ Initialize Firebase ------------------
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-// ------------------ DOM Elements ------------------
-const loginSection = document.getElementById("login-section");
-const dashboard = document.getElementById("dashboard");
-const articlesList = document.getElementById("articles-list");
+// DOM
+const loginPage = document.getElementById('loginPage');
+const dashboardPage = document.getElementById('dashboardPage');
+const loginBtn = document.getElementById('loginBtn');
+const logoutBtn = document.getElementById('logoutBtn');
+const loginError = document.getElementById('loginError');
+const articlesContainer = document.getElementById('articlesContainer');
 
-// ------------------ Login Function ------------------
-window.loginAdmin = async function() {
-  const email = document.getElementById("admin-email").value;
-  const password = document.getElementById("admin-password").value;
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    loginSection.style.display = "none";
-    dashboard.style.display = "block";
-    loadArticles();
-  } catch (error) {
-    alert("Login failed: " + error.message);
-  }
-}
+const addArticleBtn = document.getElementById('addArticleBtn');
+const articleFormModal = document.getElementById('articleFormModal');
+const cancelArticleBtn = document.getElementById('cancelArticleBtn');
+const saveArticleBtn = document.getElementById('saveArticleBtn');
+const formMsg = document.getElementById('formMsg');
 
-// ------------------ Add New Article ------------------
-window.addArticle = async function() {
-  const articleData = {
-    titleEn: document.getElementById("titleEn").value,
-    titleAr: document.getElementById("titleAr").value,
-    summaryEn: document.getElementById("summaryEn").value,
-    summaryAr: document.getElementById("summaryAr").value,
-    contentEn: document.getElementById("contentEn").value,
-    contentAr: document.getElementById("contentAr").value,
-    category: document.getElementById("category").value,
-    image: document.getElementById("image").value,
-    tags: document.getElementById("tags").value.split(",").map(tag => tag.trim()),
-    author: "Admin",
-    date: new Date().toLocaleDateString(),
-    readTime: "5 min",
-    views: "0"
-  };
-  try {
-    await addDoc(collection(db, "articles"), articleData);
-    alert("Article added successfully!");
-    clearForm();
-    loadArticles();
-  } catch (error) {
-    console.error("Error adding article:", error);
-  }
-}
+// Login
+loginBtn.addEventListener('click', () => {
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
 
-// ------------------ Load Existing Articles ------------------
-async function loadArticles() {
-  articlesList.innerHTML = "";
-  try {
-    const snapshot = await getDocs(collection(db, "articles"));
-    snapshot.forEach(docItem => {
-      const data = docItem.data();
-      const div = document.createElement("div");
-      div.classList.add("article-item");
-      div.innerHTML = `
-        <strong>${data.titleEn}</strong> (${data.category})<br>
-        <button onclick="deleteArticle('${docItem.id}')">Delete</button>
-      `;
-      articlesList.appendChild(div);
-    });
-  } catch (error) {
-    console.error("Error loading articles:", error);
-  }
-}
-
-// ------------------ Delete Article ------------------
-window.deleteArticle = async function(id) {
-  if(confirm("Are you sure you want to delete this article?")) {
-    try {
-      await deleteDoc(doc(db, "articles", id));
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      loginPage.classList.add('hidden');
+      dashboardPage.classList.remove('hidden');
       loadArticles();
-    } catch (error) {
-      console.error("Error deleting article:", error);
-    }
-  }
-}
+    })
+    .catch(err => loginError.textContent = err.message);
+});
 
-// ------------------ Clear Form After Adding ------------------
-function clearForm() {
-  document.getElementById("titleEn").value = "";
-  document.getElementById("titleAr").value = "";
-  document.getElementById("summaryEn").value = "";
-  document.getElementById("summaryAr").value = "";
-  document.getElementById("contentEn").value = "";
-  document.getElementById("contentAr").value = "";
-  document.getElementById("category").value = "";
-  document.getElementById("image").value = "";
-  document.getElementById("tags").value = "";
-}
+// Logout
+logoutBtn.addEventListener('click', () => {
+  auth.signOut().then(() => {
+    dashboardPage.classList.add('hidden');
+    loginPage.classList.remove('hidden');
+  });
+});
 
-// ------------------ Auto Load Articles if Already Logged In ------------------
-auth.onAuthStateChanged(user => {
-  if(user) {
-    loginSection.style.display = "none";
-    dashboard.style.display = "block";
+// Article Form
+addArticleBtn.addEventListener('click', () => {
+  articleFormModal.classList.remove('hidden');
+  formMsg.textContent = '';
+});
+
+cancelArticleBtn.addEventListener('click', () => {
+  articleFormModal.classList.add('hidden');
+});
+
+// Save Article
+saveArticleBtn.addEventListener('click', async () => {
+  const articleData = {
+    titleEn: document.getElementById('titleEn').value,
+    titleAr: document.getElementById('titleAr').value,
+    summaryEn: document.getElementById('summaryEn').value,
+    summaryAr: document.getElementById('summaryAr').value,
+    contentEn: document.getElementById('contentEn').value,
+    contentAr: document.getElementById('contentAr').value,
+    image: document.getElementById('imageUrl').value,
+    author: document.getElementById('author').value,
+    category: document.getElementById('category').value,
+    tags: document.getElementById('tags').value.split(',').map(t => t.trim()),
+    date: new Date().toLocaleDateString(),
+    readTime: '5 min',
+    views: '0'
+  };
+
+  try {
+    await db.collection('articles').add(articleData);
+    formMsg.style.color = 'green';
+    formMsg.textContent = 'Article added successfully!';
+    articleFormModal.classList.add('hidden');
     loadArticles();
+  } catch (error) {
+    formMsg.style.color = 'red';
+    formMsg.textContent = error.message;
   }
 });
+
+// Load Articles
+async function loadArticles() {
+  articlesContainer.innerHTML = '';
+  try {
+    const snapshot = await db.collection('articles').get();
+    snapshot.forEach(doc => {
+      const a = doc.data();
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${a.image || ''}" alt="${a.titleEn}">
+        <h3>${a.titleEn}</h3>
+        <p>${a.summaryEn}</p>
+        <small>${a.author} - ${a.date}</small>
+      `;
+      articlesContainer.appendChild(card);
+    });
+  } catch (err) {
+    articlesContainer.innerHTML = `<p class="error-msg">${err.message}</p>`;
+  }
+}
+
+
