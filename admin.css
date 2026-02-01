@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  margin:0;
+  padding:0;
+  background:#f8fef9;
+  color:#0a1f15;
+}
+
+.admin-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+input, textarea, button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+button {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #059669;
+}
+
+#articles-list div {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin:5px 0;
+}

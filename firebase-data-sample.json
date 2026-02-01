@@ -1,0 +1,79 @@
+{
+  "articles": [
+    {
+      "titleEn": "Breakthrough in Quantum Computing Opens New Possibilities",
+      "titleAr": "اختراق في الحوسبة الكمية يفتح إمكانيات جديدة",
+      "summaryEn": "Scientists achieve a major milestone in quantum computing that could revolutionize data processing.",
+      "summaryAr": "يحقق العلماء إنجازاً كبيراً في الحوسبة الكمية قد يحدث ثورة في معالجة البيانات.",
+      "contentEn": "In a groundbreaking achievement, researchers at leading technology institutes have successfully demonstrated a quantum computing system capable of solving complex problems exponentially faster than traditional computers.\n\nThe new quantum processor utilizes 127 qubits, allowing it to perform calculations that would take classical supercomputers thousands of years to complete. This advancement has significant implications for fields ranging from drug discovery to climate modeling.\n\nDr. Sarah Chen, lead researcher on the project, explains: \"This represents a quantum leap forward in our computational capabilities. We are now able to simulate molecular interactions with unprecedented accuracy.\"\n\nThe technology also has profound implications for cybersecurity, as quantum computers could potentially break current encryption methods while simultaneously enabling the creation of virtually unbreakable quantum encryption systems.",
+      "contentAr": "في إنجاز رائد، نجح باحثون في معاهد التكنولوجيا الرائدة في إظهار نظام حوسبة كمية قادر على حل المشكلات المعقدة بشكل أسرع بكثير من أجهزة الكمبيوتر التقليدية.\n\nيستخدم المعالج الكمي الجديد 127 كيوبت، مما يسمح له بإجراء حسابات قد تستغرق من الحواسيب الفائقة التقليدية آلاف السنين لإنجازها. لهذا التقدم آثار كبيرة على مجالات تتراوح من اكتشاف الأدوية إلى نمذجة المناخ.\n\nتوضح الدكتورة سارة تشين، الباحثة الرئيسية في المشروع: \"هذا يمثل قفزة كمية إلى الأمام في قدراتنا الحسابية. نحن الآن قادرون على محاكاة التفاعلات الجزيئية بدقة غير مسبوقة.\"\n\nللتكنولوجيا أيضاً آثار عميقة على الأمن السيبراني، حيث يمكن للحواسيب الكمية كسر أساليب التشفير الحالية مع تمكين إنشاء أنظمة تشفير كمية غير قابلة للكسر تقريباً.",
+      "image": "https://images.unsplash.com/photo-1614308459036-779d0dfe51ff?w=800",
+      "author": "Dr. Ahmed Al-Sayed",
+      "date": "Feb 1, 2026",
+      "readTime": "5 min",
+      "views": "12500",
+      "category": "scientific",
+      "tags": ["quantum", "technology", "science", "innovation"]
+    },
+    {
+      "titleEn": "Ancient Manuscripts Reveal Lost Civilization",
+      "titleAr": "مخطوطات قديمة تكشف عن حضارة مفقودة",
+      "summaryEn": "Archaeologists discover ancient texts that provide new insights into a previously unknown civilization.",
+      "summaryAr": "يكتشف علماء الآثار نصوصاً قديمة توفر رؤى جديدة في حضارة لم تكن معروفة من قبل.",
+      "contentEn": "A team of international archaeologists has uncovered a collection of ancient manuscripts in a remote desert region, shedding light on a sophisticated civilization that thrived over 3,000 years ago.\n\nThe texts, written in a previously unknown script, detail advanced astronomical observations, mathematical concepts, and intricate social structures. The discovery challenges our understanding of ancient knowledge and cultural exchange.\n\nProfessor Maria Rodriguez, who led the expedition, states: \"These manuscripts demonstrate a level of scientific and cultural sophistication that rivals contemporary civilizations. The astronomical charts are remarkably accurate.\"\n\nThe findings also include references to trade networks spanning thousands of miles, indicating extensive cultural and economic interactions that historians had not previously documented.",
+      "contentAr": "اكتشف فريق من علماء الآثار الدوليين مجموعة من المخطوطات القديمة في منطقة صحراوية نائية، تلقي الضوء على حضارة متطورة ازدهرت منذ أكثر من 3000 عام.\n\nتفصّل النصوص، المكتوبة بخط لم يكن معروفاً من قبل، ملاحظات فلكية متقدمة ومفاهيم رياضية وهياكل اجتماعية معقدة. يتحدى الاكتشاف فهمنا للمعرفة القديمة والتبادل الثقافي.\n\nتقول البروفيسورة ماريا رودريغيز، التي قادت البعثة: \"تُظهر هذه المخطوطات مستوى من التطور العلمي والثقافي ينافس الحضارات المعاصرة. الخرائط الفلكية دقيقة بشكل ملحوظ.\"\n\nتتضمن النتائج أيضاً إشارات إلى شبكات تجارية تمتد لآلاف الأميال، مما يشير إلى تفاعلات ثقافية واقتصادية واسعة لم يوثقها المؤرخون من قبل.",
+      "image": "https://images.unsplash.com/photo-1719176372649-5cad35817bc8?w=800",
+      "author": "Prof. Layla Hassan",
+      "date": "Jan 30, 2026",
+      "readTime": "7 min",
+      "views": "18200",
+      "category": "cultural",
+      "tags": ["archaeology", "history", "culture", "discovery"]
+    },
+    {
+      "titleEn": "New Music Genre Blends Traditional and Electronic Sounds",
+      "titleAr": "نوع موسيقي جديد يمزج الأصوات التقليدية والإلكترونية",
+      "summaryEn": "Artists create innovative fusion music that bridges cultural boundaries.",
+      "summaryAr": "يبتكر الفنانون موسيقى اندماجية مبتكرة تربط بين الحدود الثقافية.",
+      "contentEn": "A new wave of musicians is revolutionizing the global music scene by seamlessly blending traditional folk instruments with cutting-edge electronic production techniques.\n\nThis emerging genre, dubbed \"Digital Heritage,\" has gained massive popularity among diverse audiences. Artists are using traditional instruments like the oud, sitar, and djembe alongside synthesizers.\n\nRenowned producer DJ Karim explains: \"We are creating a dialogue between past and present, honoring our cultural roots while embracing modern innovation.\"\n\nMajor music festivals worldwide have begun featuring Digital Heritage stages, proving that this fusion resonates across cultural divides.",
+      "contentAr": "تحدث موجة جديدة من الموسيقيين ثورة في المشهد الموسيقي العالمي من خلال المزج السلس بين الآلات الشعبية التقليدية وتقنيات الإنتاج الإلكتروني المتطورة.\n\nاكتسب هذا النوع الناشئ، الملقب بـ \"التراث الرقمي\"، شعبية هائلة بين الجماهير المتنوعة. يستخدم الفنانون آلات تقليدية مثل العود والسيتار والجيمبي جنباً إلى جنب مع المركبات الصوتية.\n\nيوضح المنتج الشهير دي جي كريم: \"نحن نخلق حواراً بين الماضي والحاضر، ونحترم جذورنا الثقافية بينما نتبنى الابتكار الحديث.\"\n\nبدأت المهرجانات الموسيقية الكبرى في جميع أنحاء العالم بعرض مراحل التراث الرقمي، مما يثبت أن هذا الاندماج يلقى صدى عبر الحدود الثقافية.",
+      "image": "https://images.unsplash.com/photo-1767969457898-51d5e9cf81d2?w=800",
+      "author": "Yasmin Fouad",
+      "date": "Jan 29, 2026",
+      "readTime": "4 min",
+      "views": "25300",
+      "category": "music",
+      "tags": ["music", "culture", "innovation", "fusion"]
+    },
+    {
+      "titleEn": "Global Climate Summit Reaches Historic Agreement",
+      "titleAr": "قمة المناخ العالمية تتوصل إلى اتفاق تاريخي",
+      "summaryEn": "World leaders commit to ambitious carbon reduction targets.",
+      "summaryAr": "يلتزم قادة العالم بأهداف طموحة لخفض الكربون.",
+      "contentEn": "In a momentous development for global environmental policy, representatives from 195 nations have signed a comprehensive climate agreement that sets binding targets for carbon emissions reduction.\n\nThe accord commits signatory nations to achieving net-zero emissions by 2050. The agreement also establishes a $500 billion fund to support developing nations.\n\nUN Secretary-General António Guterres called it \"a turning point in humanity's fight against climate change.\"\n\nThe agreement includes specific provisions for protecting biodiversity and transitioning away from fossil fuels.",
+      "contentAr": "في تطور مهم للسياسة البيئية العالمية، وقع ممثلون من 195 دولة على اتفاق مناخي شامل يضع أهدافاً ملزمة لخفض انبعاثات الكربون.\n\n��لزم الاتفاق الدول الموقعة بتحقيق انبعاثات صفرية بحلول عام 2050. كما ينشئ الاتفاق صندوقاً بقيمة 500 مليار دولار لدعم الدول النامية.\n\nوصفه الأمين العام للأمم المتحدة أنطونيو غوتيريش بأنه \"نقطة تحول في كفاح الإنسانية ضد تغير المناخ.\"\n\nيتضمن الاتفاق أحكاماً محددة لحماية التنوع البيولوجي والابتعاد عن الوقود الأحفوري.",
+      "image": "https://images.unsplash.com/photo-1562118774-731cd8f2391f?w=800",
+      "author": "Omar Ibrahim",
+      "date": "Jan 28, 2026",
+      "readTime": "6 min",
+      "views": "32100",
+      "category": "news",
+      "tags": ["climate", "environment", "politics", "global"]
+    },
+    {
+      "titleEn": "AI-Powered Medical Diagnosis Shows Remarkable Accuracy",
+      "titleAr": "التشخيص الطبي المدعوم بالذكاء الاصطناعي يظهر دقة ملحوظة",
+      "summaryEn": "New AI system outperforms human doctors in detecting early-stage diseases.",
+      "summaryAr": "نظام ذكاء اصطناعي جديد يتفوق على الأطباء البشريين في اكتشاف الأمراض المبكرة.",
+      "contentEn": "A revolutionary AI diagnostic system has demonstrated the ability to detect early-stage diseases with accuracy rates exceeding 95%.\n\nThe system can identify subtle patterns invisible to the human eye. In clinical trials, it successfully detected various cancers and cardiovascular conditions months before conventional methods.\n\nDr. Jennifer Lee emphasizes: \"This technology enhances doctors' capabilities, acting as a powerful second opinion.\"\n\nHospitals in several countries have begun integrating the system into their workflows.",
+      "contentAr": "أظهر نظام تشخيصي ثوري بالذكاء الاصطناعي القدرة على اكتشاف الأمراض في مراحلها المبكرة بمعدلات دقة تتجاوز 95٪.\n\nيمكن للنظام تحديد أنماط دقيقة غير مرئية للعين البشرية. في التجارب السريرية، نجح في اكتشاف أنواع مختلفة من السرطانات قبل الطرق التقليدية بأشهر.\n\nتؤكد الدكتورة جينيفر لي: \"هذه التكنولوجيا تعزز قدرات الأطباء، تعمل كرأي ثانٍ قوي.\"\n\nبدأت المستشفيات في عدة دول بدمج النظام في سير عملها.",
+      "image": "https://images.unsplash.com/photo-1706777280252-5de52771cf13?w=800",
+      "author": "Dr. Fatima Al-Rashid",
+      "date": "Jan 27, 2026",
+      "readTime": "5 min",
+      "views": "21700",
+      "category": "technology",
+      "tags": ["AI", "healthcare", "innovation", "medicine"]
+    }
+  ]
+}
